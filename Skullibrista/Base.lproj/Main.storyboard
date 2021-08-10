@@ -1,24 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Skullibrista" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="street" translatesAutoresizingMaskIntoConstraints="NO" id="beQ-SO-4cO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.90588235289999997" green="0.95686274510000002" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="player0" translatesAutoresizingMaskIntoConstraints="NO" id="71r-Ne-arH">
+                                <rect key="frame" x="117.5" y="193.5" width="140" height="280"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="Zld-vR-8NE"/>
+                                    <constraint firstAttribute="width" secondItem="71r-Ne-arH" secondAttribute="height" multiplier="1:2" id="irn-6p-a04"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="zoD-pR-KXS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="83"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="zoD-pR-KXS" secondAttribute="height" multiplier="1029:228" id="GsY-V8-mLZ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voce precisa se equilibrar girando o celular. Se a caveira sair da área delimitada é GAME OVER!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35k-vT-tdf">
+                                <rect key="frame" x="36" y="20" width="303" height="115"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view alpha="0.55000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWL-XC-XWB">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gameOver" translatesAutoresizingMaskIntoConstraints="NO" id="OR2-Tj-7oF">
+                                        <rect key="frame" x="87.5" y="28" width="200" height="148.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="OR2-Tj-7oF" secondAttribute="height" multiplier="452:336" id="XqU-d8-Hag"/>
+                                            <constraint firstAttribute="width" constant="200" id="Xy0-SS-UDI"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ked-o7-zhl">
+                                        <rect key="frame" x="42.5" y="469" width="290" height="29"/>
+                                        <state key="normal" image="playAgain"/>
+                                        <connections>
+                                            <action selector="playAgain:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xuL-iM-5NU"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Você jogou durante X segundos" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsI-7F-P8z">
+                                        <rect key="frame" x="61.5" y="418.5" width="252" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <color key="textColor" red="0.99963980910000005" green="1" blue="0.84587639569999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ked-o7-zhl" firstAttribute="centerX" secondItem="VWL-XC-XWB" secondAttribute="centerX" id="3GK-Vh-Z5e"/>
+                                    <constraint firstItem="ked-o7-zhl" firstAttribute="top" secondItem="dsI-7F-P8z" secondAttribute="bottom" constant="30" id="B2i-JP-jiy"/>
+                                    <constraint firstItem="OR2-Tj-7oF" firstAttribute="centerX" secondItem="VWL-XC-XWB" secondAttribute="centerX" id="Mek-8t-Z3l"/>
+                                    <constraint firstItem="dsI-7F-P8z" firstAttribute="centerX" secondItem="VWL-XC-XWB" secondAttribute="centerX" id="pyy-K3-pBu"/>
+                                    <constraint firstItem="OR2-Tj-7oF" firstAttribute="top" secondItem="VWL-XC-XWB" secondAttribute="top" constant="28" id="qgo-B5-i5N"/>
+                                    <constraint firstItem="ked-o7-zhl" firstAttribute="centerY" secondItem="VWL-XC-XWB" secondAttribute="centerY" constant="150" id="xnp-Nh-LqX"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="35k-vT-tdf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="0Al-oV-Zor"/>
+                            <constraint firstItem="beQ-SO-4cO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0L5-Jt-Zit"/>
+                            <constraint firstItem="VWL-XC-XWB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2mi-RC-lPu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zoD-pR-KXS" secondAttribute="trailing" id="6do-Wd-LS8"/>
+                            <constraint firstItem="zoD-pR-KXS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Erd-CV-I6y"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="35k-vT-tdf" secondAttribute="trailing" constant="36" id="REL-3Y-nSS"/>
+                            <constraint firstItem="VWL-XC-XWB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Slv-Po-Fes"/>
+                            <constraint firstItem="VWL-XC-XWB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Wad-HI-S0u"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="beQ-SO-4cO" secondAttribute="trailing" id="a2J-Vx-dRR"/>
+                            <constraint firstItem="35k-vT-tdf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="bSI-Ma-Aat"/>
+                            <constraint firstItem="beQ-SO-4cO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cUe-gR-uWo"/>
+                            <constraint firstItem="zoD-pR-KXS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="efv-2a-yj9"/>
+                            <constraint firstItem="71r-Ne-arH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hQg-0H-mF5"/>
+                            <constraint firstItem="VWL-XC-XWB" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="k1V-3G-HV3"/>
+                            <constraint firstItem="71r-Ne-arH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="s0Y-y0-xnf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="beQ-SO-4cO" secondAttribute="bottom" id="wFQ-mn-hwA"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lbInstructions" destination="35k-vT-tdf" id="wQo-uG-qGS"/>
+                        <outlet property="lbTimePlayed" destination="dsI-7F-P8z" id="Rud-qs-pI4"/>
+                        <outlet property="player" destination="71r-Ne-arH" id="lXi-nC-CAY"/>
+                        <outlet property="street" destination="beQ-SO-4cO" id="Yd5-9b-Bl0"/>
+                        <outlet property="viGameOver" destination="VWL-XC-XWB" id="Lw7-6h-6Ge"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-0.80000000000000004" y="83.208395802098963"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gameOver" width="226" height="168"/>
+        <image name="playAgain" width="290" height="29"/>
+        <image name="player0" width="588" height="1176"/>
+        <image name="street" width="1400" height="2800"/>
+        <image name="sun" width="1029" height="228"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
